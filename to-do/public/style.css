@@ -1,0 +1,87 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family:'Courier New', Courier, monospace;
+}
+
+header {
+    background-color:bisque ;
+    margin: auto -16px;
+    padding: 16px 32px;
+    box-shadow: 0 0 10px 0 rgba(0,0,0,0.3);
+}
+
+.box {
+    display: flex;
+    justify-content: center;
+    margin-top: 1em;
+}
+
+form {
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    padding: 1em;
+    width: 400px;
+}
+
+input,textarea {
+    width: 100%;
+    border: none;
+    text-decoration: none;
+    padding: 4px;
+    outline: none;
+    margin-bottom: 1em;
+    font-family: inherit;
+}
+
+.addIcon {
+    width: 60px; 
+    height: 60px;
+    float: right;
+  }
+  
+  .addIcon svg { 
+    font-size: 20px;
+  }
+  
+  .addIcon {
+    width: 60px;  
+    height: 60px;
+  }
+  
+  .addIcon svg { 
+    font-size: 36px;
+  }
+
+  .note {
+    margin-top: 1em;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    padding: 1em;
+    width: 300px;
+    margin: 1em;
+  }
+
+  .allNotes {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  p {
+    color: orange;
+  }
+
+  .deleteButton {
+    float: right;
+    cursor: pointer;
+  }
+
+  @media (max-width: 500px) {
+    form {
+        width: 300px;
+    }
+  }
+  
