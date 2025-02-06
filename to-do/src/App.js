@@ -5,37 +5,39 @@ import { useState } from "react";
 import Note from "./Components/Note";
 
 function App() {
-  function deleteNote(id) {
-    setNotes((prevNotes) => {
-      return prevNotes.filter((item, index) => {
-        return index != id;
-      });
-    });
-  }
   const [notes, setNotes] = useState([]);
+
   function addNote(newNote) {
+    if (!newNote.title.trim() && !newNote.content.trim()) {
+      return;
+    }
+
     setNotes((prevNotes) => {
       return [...prevNotes, newNote];
     });
-    console.log(notes);
   }
+
+  function deleteNote(id) {
+    setNotes((prevNotes) => {
+      return prevNotes.filter((item, index) => index !== id);
+    });
+  }
+
   return (
     <div className="App">
       <Header />
       <CreateArea onAdd={addNote} />
 
       <div className="allNotes">
-        {notes.map((noteItem, index) => {
-          return (
-            <Note
-              key={index}
-              id={index}
-              title={noteItem.title}
-              content={noteItem.content}
-              onDelete={deleteNote}
-            />
-          );
-        })}
+        {notes.map((noteItem, index) => (
+          <Note
+            key={index}
+            id={index}
+            title={noteItem.title}
+            content={noteItem.content}
+            onDelete={deleteNote}
+          />
+        ))}
       </div>
     </div>
   );
